@@ -4,11 +4,14 @@ import cors from 'cors';
 
 
 const server = express();
-const PORT = 4000;
+const PORT = 3000;
 
 server.use(cors());
 
-let todos = [];
+const todos = [
+    { id: 1, name: "Milch holen", userId: 1 },
+    { id: 2, name: "Brötchen holen", userId: 1 },
+];
 
 // Hier könnten wir die Todos aus einer JSON-Datei laden
 
@@ -24,16 +27,26 @@ server.get("/loadTodos", (req, res) => {
 /*server.get("/", (req, res) => {
     console.log("Ich bekomme ein Get");
     res.send("Hello From Node");
-});*/
+});
 server.get("/todos", (req, res) => {
     console.log("Ich bekomme ein Get");
     res.json(todos);
     res.send("hallo welt");
 });
+*/
 
+server.get("/", (req, res) => {
+    res.send("Hello World");
+});
 
-console.log("Server Online");
-server.listen(PORT);
+server.get("/todos/all", (req, res) => {
+    res.json(todos);
+}); 
+
+server.listen(PORT, () => {
+    console.log(`Express app is running on http://localhost:${PORT}`);
+});
+
 
 /*Der Code von heute morgen sollte funktionieren. Macht euch bitte nochmal bewusst was Frontend und Backend ist.
 
