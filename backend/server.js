@@ -1,4 +1,4 @@
-import express from 'express';
+/*import express from 'express';
 import cors from 'cors';
 
 
@@ -20,7 +20,7 @@ server.get("/loadTodos", (req, res) => {
     const todosFromFile = require('./todos.json');
     todos = todosFromFile;
     res.json(todos);
-    res.send("Todos geladen");
+    //res.send("Todos geladen");
 });
     
 
@@ -34,7 +34,7 @@ server.get("/todos", (req, res) => {
     res.send("hallo welt");
 });
 */
-
+/*
 server.get("/", (req, res) => {
     res.send("Hello World");
 });
